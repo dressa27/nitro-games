@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@300;400;600&display=swap');
+
+:root {
+    --bg-body: #050505;
+    --bg-card: rgba(255, 255, 255, 0.03);
+    --neon-green: #00ff88;
+    --neon-blue: #00d9ff;
+    --text-main: #e0e0e0;
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header Fixo */
+header {
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(15px);
+    background: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.logo {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    color: #fff;
+}
+
+.logo span { color: var(--neon-green); }
+
+nav ul { display: flex; list-style: none; gap: 30px; }
+nav a { text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; transition: 0.3s; }
+nav a:hover { color: var(--neon-blue); }
+
+/* Banner Centralizado */
+.banner {
+    height: 40vh;
+    min-height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle at center, #0a192f 0%, #050505 100%);
+    padding-top: 80px;
+}
+
+.banner h1 {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 3.5rem;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.banner h1 span {
+    background: linear-gradient(90deg, var(--neon-green), #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.banner p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    max-width: 600px;
+    margin: 15px auto 0;
+}
+
+/* Conteúdo Principal */
+.container { 
+    max-width: 1100px; 
+    margin: 0 auto; 
+    padding: 60px 20px 100px; 
+}
+
+/* Itens de Geração com Texto Justificado */
+.gen-item {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 100px;
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: 24px;
+    border: 1px solid var(--glass-border);
+}
+
+.gen-item.reverse { flex-direction: row-reverse; }
+
+.gen-item img {
+    width: 45%;
+    max-height: 350px;
+    object-fit: contain;
+    border-radius: 15px;
+}
+
+.gen-text { 
+    width: 55%; 
+    text-align: justify; /* AQUI ESTÁ A MUDANÇA QUE VOCÊ PEDIU */
+}
+
+.gen-text h2 { 
+    font-family: 'Syncopate', sans-serif;
+    color: var(--neon-blue); 
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: left; /* Mantém o título alinhado à esquerda para contraste */
+}
+
+/* Footer Profissional */
+footer {
+    background: #000;
+    padding: 60px 10%;
+    border-top: 1px solid var(--glass-border);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.btn-cv {
+    padding: 15px 35px;
+    border: 2px solid var(--neon-blue);
+    color: var(--neon-blue);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: 0.4s;
+}
+
+.btn-cv:hover {
+    background: var(--neon-blue);
+    color: #000;
+}
+
+@media (max-width: 850px) {
+    .gen-item, .gen-item.reverse { flex-direction: column; text-align: center; }
+    .gen-item img, .gen-text { width: 100%; text-align: center; }
+    .banner h1 { font-size: 2.5rem; }
+}
+
+/* --- TEMA EXCLUSIVO XBOX --- */
+
+
+.pagina-xbox {
+    background-color: #0a2f0a !important; 
+}
+
+
+.pagina-xbox .gen-item {
+    background: #000 !important;
+    border: 1px solid rgba(15, 249, 15, 0.4); /* Borda verde brilhante */
+}
+
+.pagina-xbox .gen-text h2 {
+    color: #107c10 !important;
+}
+
+/* Ajusta o Banner lá no topo para combinar */
+.pagina-xbox .banner {
+    background: radial-gradient(circle at center, #0a2f0a 0%, #050d05 100%) !important;
+}
+
+/* --- TEMA EXCLUSIVO PLAYSTATION --- */
+
+/* Fundo da página em um tom de azul marinho bem profundo */
+.pagina-playstation {
+    background-color: #01153b  !important; 
+}
+
+/* Mantém os cards pretos com borda azul vibrante */
+.pagina-playstation .gen-item {
+    background: #0f0f0f !important;
+    border: 1px solid rgba(0, 110, 255, 0.734); 
+}
+
+/* Títulos dos cards em azul Sony */
+.pagina-playstation .gen-text h2 {
+    color: #006dff !important;
+}
+
+
+/* Ajuste do fundo do Banner para combinar com o tema azul */
+.pagina-playstation .banner {
+    background: radial-gradient(circle at center, #001a4d 0%, #000510 100%) !important;
+}
+
+
+/* --- TEMA EXCLUSIVO NINTENDO --- */
+
+/* Fundo da página em um tom de vermelho bem profundo/escuro */
+.pagina-nintendo {
+    background-color: #460000 !important; 
+}
+
+/* Mantém os cards pretos com borda vermelha nintendo */
+.pagina-nintendo .gen-item {
+    background: #0f0f0f !important;
+    border: 1px solid rgba(230, 0, 18, 0.4); 
+}
+
+/* Títulos dos cards em Vermelho Nintendo */
+.pagina-nintendo .gen-text h2 {
+    color: #e60012 !important;
+}
+
+
+
+/* Ajuste do fundo do Banner para o tema vermelho */
+.pagina-nintendo .banner {
+    background: radial-gradient(circle at center, #4d0000 0%, #1a0000 100%) !important;
+}
+
+/* --- EFEITO DE CORES NO MENU DE NAVEGAÇÃO --- */
+
+/* PlayStation - Muda para Azul ao passar o mouse */
+nav ul li a[href="playstation.html"]:hover {
+    color: #006dff !important;
+    text-shadow: 0 0 10px rgba(0, 109, 255, 0.5);
+}
+
+/* Xbox - Muda para Verde ao passar o mouse */
+nav ul li a[href="xbox.html"]:hover {
+    color: #107c10 !important;
+    text-shadow: 0 0 10px rgba(16, 124, 16, 0.5);
+}
+
+/* Nintendo - Muda para Vermelho ao passar o mouse */
+nav ul li a[href="nintendo.html"]:hover {
+    color: #e60012 !important;
+    text-shadow: 0 0 10px rgba(230, 0, 18, 0.5);
+}
+
+/* Home - Mantém o Azul Neon padrão para combinar com o logo */
+nav ul li a[href="index.html"]:hover {
+    color: var(--neon-blue) !important;
+    text-shadow: 0 0 10px var(--neon-blue);
+}
+
+/* Adiciona uma transição suave para as cores não mudarem de forma brusca */
+nav a {
+    transition: color 0.3s ease, text-shadow 0.3s ease !important;
+}
