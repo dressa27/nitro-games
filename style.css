@@ -310,3 +310,17 @@ nav a {
     .pagina-xbox .menu-botao { color: #107c10 !important; }
     .pagina-nintendo .menu-botao { color: #e60012 !important; }
 }
+
+/* Correção de alinhamento para Notebook (mantém logo e links na mesma linha) */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+@media (min-width: 769px) {
+    nav {
+        gap: 40px;
+    }
+}
