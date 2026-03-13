@@ -258,6 +258,60 @@ nav ul li a[href="index.html"]:hover {
     text-shadow: 0 0 10px var(--neon-blue);
 }
 
+/* --- AJUSTES PARA CELULAR (MOBILE) --- */
+
+@media (max-width: 768px) {
+    /* 1. Ajusta o Menu para não amontoar */
+    nav ul {
+        flex-direction: column; /* Coloca os links um embaixo do outro */
+        gap: 10px;
+        padding: 10px 0;
+    }
+
+    /* 2. Ajusta o Banner (Topo) */
+    .banner h1 {
+        font-size: 2.5rem !important; /* Diminui o tamanho da letra no celular */
+    }
+
+    /* 3. Ajusta os CARDS (A mágica acontece aqui) */
+    .gen-item {
+        flex-direction: column !important; /* Imagem em cima, texto embaixo */
+        text-align: center;
+        padding: 15px;
+    }
+
+    .gen-image {
+        width: 100% !important; /* Imagem ocupa a largura toda */
+        max-width: 250px;
+        margin: 0 auto 15px auto;
+    }
+
+    .gen-text {
+        padding: 0 !important;
+    }
+
+    .gen-text h2 {
+        text-align: center !important; /* Centraliza o título no celular */
+        font-size: 1.5rem;
+    }
+
+    /* 4. Ajusta o Rodapé */
+    footer .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .sociais {
+        justify-content: center;
+    }
+
+    .btn-cv {
+        width: 100%; /* Botão de currículo fica grande para facilitar o clique */
+        text-align: center;
+    }
+}
+
 /* Adiciona uma transição suave para as cores não mudarem de forma brusca */
 nav a {
     transition: color 0.3s ease, text-shadow 0.3s ease !important;
